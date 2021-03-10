@@ -9,12 +9,10 @@ Array.from(nav).forEach(link => {
     });
 });
 
-document.addEventListener('click', (event) => { event.target.style.backgroundColor = 'pink'; });
-
 
 const cta = document.querySelectorAll('.btn');
 Array.from(cta).forEach(link => {
-    link.addEventListener('mouseover', (event) => {
+    link.addEventListener('click', (event) => {
         event.target.style.backgroundColor = 'green';
         setTimeout(function () {
             event.target.style.color = "yellow";
@@ -22,3 +20,15 @@ Array.from(cta).forEach(link => {
     });
 });
 
+const mainNav = document.querySelector('.main-navigation');
+mainNav.style.borderBottom = 'solid 5px black';
+mainNav.style.backgroundColor = 'gold';
+
+const backGround = document.querySelector('.home');
+backGround.style.backgroundColor = 'pink';
+
+cta.addEventListener('dbclick', runEvent);
+
+function runEvent(e) {
+    console.log('EVENT TYPER: ' + e.type);
+}
