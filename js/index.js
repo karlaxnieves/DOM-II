@@ -12,5 +12,13 @@ Array.from(nav).forEach(link => {
 document.addEventListener('click', (event) => { event.target.style.backgroundColor = 'pink'; });
 
 
-const scroll = document.querySelectorAll('desination');
+const cta = document.querySelectorAll('.btn');
+Array.from(cta).forEach(link => {
+    link.addEventListener('mouseover', (event) => {
+        event.target.style.backgroundColor = 'green';
+        setTimeout(function () {
+            event.target.style.color = "yellow";
+        }, 5);
+    });
+});
 
