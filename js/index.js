@@ -10,19 +10,13 @@ Array.from(nav).forEach(link => {
 });
 
 
-function zoom(event) {
-    event.preventDefault();
-
-    scale += event.deltaY * -0.01;
-
-    scale = Math.min(Math.max(.125, scale), 4);
-
-    el.style.transform = `scale(${scale})`;
-}
-
-let scale = 1;
-const el = document.querySelector('div')
-el.onwheel = zoom;
-
-
+const cta = document.querySelectorAll('.btn');
+Array.from(cta).forEach(link => {
+    link.addEventListener('click', (event) => {
+        event.target.style.backgroundColor = 'pink';
+        setTimeout(function () {
+            event.target.style.color = "aqua";
+        });
+    });
+});
 
