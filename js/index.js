@@ -20,3 +20,33 @@ Array.from(cta).forEach(link => {
     });
 });
 
+const backGround = document.querySelector('.home');
+backGround.style.backgroundColor = 'orange';
+
+
+const mainNav = document.querySelector('.main-navigation');
+mainNav.style.borderBottom = 'solid 5px black';
+mainNav.style.backgroundColor = 'gold';
+
+function zoom(event) {
+    event.preventDefault();
+
+    if (event.deltaY < 0) {
+
+        scale *= event.deltaY * -2;
+    }
+    else {
+
+        scale /= event.deltaY * 2;
+    }
+
+
+    scale = Math.min(Math.max(.125, scale), 1);
+
+
+    el.style.transform = `scale(${scale})`;
+}
+
+let scale = 1;
+const el = document.querySelector('img');
+document.onwheel = zoom;
